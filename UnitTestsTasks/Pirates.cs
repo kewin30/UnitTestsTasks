@@ -8,19 +8,16 @@ namespace UnitTestsTasks
     {
         public static string CannonsReady(Dictionary<string, string> gunners)
         {
-            foreach (var item in gunners)
-            {
                 
-                if(item.Value == "nay")
+                if(gunners.ContainsValue("nay"))
                 {
                     return "Shiver me timbers!";
                 }
-                if (item.Value == "aye")
+                if (gunners.ContainsValue("aye")&& !gunners.ContainsValue("nay"))
                 {
                     return "Fire!";
                 }
-
-            }         
+      
             return "x";
         }
     }
